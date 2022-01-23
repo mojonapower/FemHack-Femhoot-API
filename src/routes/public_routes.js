@@ -11,7 +11,7 @@ router.put('/users/:id',updateUser);
 router.delete('/users/:id',deleteUser);
 
 const { append } = require('express/lib/response');
-const {loginForm, registerForm} = require('../actions/login');
+const {loginForm, registerForm} = require('../actions/login.actions');
 const router = express.Router();
 
 //importando controladores
