@@ -21,5 +21,5 @@ app.use(privateRoutes);
 
 //iniciamos servidor de express
 app.listen(port,()=>{
-  console.info(`Servidor escuchando por el puerto ${port} 🤘😎`)
+  console.info(`Server listening on port ${port} 🤘😎`)
 })
