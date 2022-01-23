@@ -1,7 +1,8 @@
 const express = require('express');
 const { append } = require('express/lib/response');
+const {loginForm} = require('../actions/login');
 const router = express.Router();
-const {response} = require('../actions/users')
+
 //importando controladores
 // const {createUser, getData, login} = require('../controllers/users.controllers');
 
@@ -13,7 +14,8 @@ const {response} = require('../actions/users')
 // router.get('/', getData);
 // router.post('/users', createUser);
 // router.post('/login',login)
-router.get('/',response );
+
+router.get('/belana',loginForm );
 
 
 module.exports = router;
