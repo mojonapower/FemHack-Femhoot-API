@@ -1,7 +1,7 @@
 const express = require('express');
 const { append } = require('express/lib/response');
 const router = express.Router();
-
+const {response} = require('../actions/users')
 //importando controladores
 // const {createUser, getData, login} = require('../controllers/users.controllers');
 
@@ -13,7 +13,7 @@ const router = express.Router();
 // router.get('/', getData);
 // router.post('/users', createUser);
 // router.post('/login',login)
-router.get('/', );
+router.get('/',response );
 
 
 module.exports = router;
