@@ -15,6 +15,19 @@ const createQuestion = (req, res) => {
 
   }
 
+  //set of 10 questions randomly
+  const random10Question = (req, res) => {
+
+  mysqlConnection.query('SELECT question, answer1, answer2, answer3, answer4, solution FROM question ORDER BY RAND() LIMIT 10', (err, rows) => {
+      if(!err) {
+        res.json(rows);
+      } else {
+        console.log(err);
+      }
+    });  
+
+}
+
   //delete question
 const deleteQuestion = (req, res) => {
         res.status(200).send('question deleted')
@@ -23,4 +36,5 @@ const deleteQuestion = (req, res) => {
 
 exports.createQuestion = createQuestion;
 exports.deleteQuestion = deleteQuestion;
+exports.random10Question = random10Question;
 
