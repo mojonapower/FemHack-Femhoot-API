@@ -1,6 +1,6 @@
 const express = require('express');
 const { append } = require('express/lib/response');
-const {loginForm} = require('../actions/login');
+const {loginForm, registerForm} = require('../actions/login');
 const router = express.Router();
 
 //importando controladores
@@ -15,7 +15,15 @@ const router = express.Router();
 // router.post('/users', createUser);
 // router.post('/login',login)
 
-router.get('/belana',loginForm );
+/*
+Maca routes
+*/
+
+router.post('/login', loginForm);
+router.post('/register', registerForm);
+/*
+end Maca routes
+*/
 
 
 module.exports = router;
