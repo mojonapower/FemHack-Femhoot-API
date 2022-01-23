@@ -1,4 +1,5 @@
 const express = require('express');
+const { append } = require('express/lib/response');
 const router = express.Router();
 
 //importando controladores
@@ -12,6 +13,7 @@ const router = express.Router();
 // router.get('/', getData);
 // router.post('/users', createUser);
 // router.post('/login',login)
+router.get('/', );
 
 
 module.exports = router;
