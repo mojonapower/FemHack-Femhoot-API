@@ -18,7 +18,7 @@ const createQuestion = (req, res) => {
   //set of 10 questions randomly
   const random10Question = (req, res) => {
 
-  mysqlConnection.query('SELECT question, answer1, answer2, answer3, answer4, solution FROM question ORDER BY RAND() LIMIT 10', (err, rows) => {
+  mysqlConnection.query('SELECT * FROM question ORDER BY RAND() LIMIT 10', (err, rows) => {
       if(!err) {
         res.json(rows);
       } else {
@@ -26,7 +26,22 @@ const createQuestion = (req, res) => {
       }
     });  
 
-}
+  }
+
+  //check question
+  const checkQuestion = (req, res) => {
+
+  let {questionID,answer} = req.body;
+     
+  mysqlConnection.query('Select * from question where solution = ?',[answer], (err, rows) => {
+      if(!err) {
+        res.json(rows);
+      } else {
+        console.log(err);
+      }
+    });  
+
+  }
 
   //delete question
 const deleteQuestion = (req, res) => {
@@ -37,4 +52,5 @@ const deleteQuestion = (req, res) => {
 exports.createQuestion = createQuestion;
 exports.deleteQuestion = deleteQuestion;
 exports.random10Question = random10Question;
+exports.checkQuestion = checkQuestion;
 
