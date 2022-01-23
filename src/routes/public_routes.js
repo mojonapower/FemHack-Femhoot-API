@@ -1,6 +1,8 @@
 const express = require('express');
 const { append } = require('express/lib/response');
 const {loginForm} = require('../actions/login');
+const {questionInsert} = require('../actions/questions.actions');
+
 const router = express.Router();
 
 //importando controladores
@@ -16,6 +18,9 @@ const router = express.Router();
 // router.post('/login',login)
 
 router.get('/belana',loginForm );
+
+//EndPoint for Questions
+router.get('/Questions',questionInsert );
 
 
 module.exports = router;
