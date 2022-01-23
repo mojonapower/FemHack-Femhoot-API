@@ -1,6 +1,6 @@
 # Femhoot API make for femhack with 
 
-🍬 Technologies: nodejs, Expressjs, sqlite, jsonwebtoken
+🍬 Technologies: nodejs, Expressjs, mysql, jsonwebtoken
 
 
 ## Quick Start
