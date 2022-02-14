@@ -1,3 +1,6 @@
+const db = require("../../models");
+
+
 function loginForm(req, res){
     //valida cuerpo de la solicitud
     if (!req.body.email)
