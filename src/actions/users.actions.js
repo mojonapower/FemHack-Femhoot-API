@@ -1,5 +1,19 @@
 const db = require("../../models");
 
+//create user
+const createUser = (req, res) => {
+
+    let {name,email,password} = req.body;
+       
+    mysqlConnection.query('INSERT INTO `users`(`name`,`email`, `password`) VALUES (?,?,?)',[email,password], (err, rows) => {
+        if(!err) {
+          res.json(rows);
+        } else {
+          console.log(err);
+        }
+      });  
+
+  }
 
 //create user
 const createUser = async (req, res) => {

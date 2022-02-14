@@ -13,6 +13,12 @@ router.post('/users',createUser);
 router.put('/users/:id',updateUser);
 router.delete('/users/:id',deleteUser);
 
+//users question
+router.post('/question',createQuestion);
+router.post('/questionrandom',random10Question);
+router.post('/question/:id',checkQuestion);
+router.delete('/question/:id',deleteQuestion);
+
 
 //login and register routes
 router.post('/login', loginForm);
