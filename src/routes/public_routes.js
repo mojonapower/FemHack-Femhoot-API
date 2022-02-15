@@ -3,9 +3,8 @@ const router = express.Router();
 
 //import actions
 const {createUser, deleteUser, updateUser} = require('../actions/users.actions')
-const {questionInsert} = require('../actions/questions.actions');
-const {loginForm, registerForm} = require('../actions/login.actions');
-
+// const {questionInsert} = require('../actions/questions.actions');
+// const {loginForm, registerForm} = require('../actions/login.actions');
 
 
 //users routes
