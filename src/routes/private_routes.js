@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const {updateUser, deleteUser, userLogin} = require('../actions/users.actions');
+//import actions
+const {updateUser, deleteUser} = require('../actions/users.actions');
 const {createQuestion, updateQuestion, deleteQuestion} = require('../actions/questions.actions');
+
+// jwt verify token
 const {verifyToken} = require('../config/verifyToken');
 
+//private test route
 router.get('/productos',verifyToken,(req,res)=>{
     const {id} = req.user.user[0]
     res.json({id})
