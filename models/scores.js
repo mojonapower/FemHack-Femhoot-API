@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Scores.init({
-    score: DataTypes.INTEGER
+    score: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Scores',

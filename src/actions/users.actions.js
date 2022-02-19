@@ -1,25 +1,22 @@
-const db = require("../../models");
 const jwt = require("jsonwebtoken");
+const db = require("../../models");
 
-//create user / register
+//user register
 const createUser = async (req, res) => {
   let { firstName, lastName, email, password } = req.body;
   try {
     const user = await db.Users.findAll({ where: { email } });
 
     if (!user.length) {
-      return res
-        .status(400)
-        .json({ msg: "Users already exists with this email" });
-    } else {
       const newUser = await db.Users.create({
         firstName,
         lastName,
         email,
         password,
       });
-      return res.status(200).send(newUser);
+      return res.status(200).json({"msg":"user registered",firstName,lastName,email});
     }
+    return res.status(401).json({ msg: "Users already exists with this email" });
   } catch (err) {
     return res.status(400).send(err);
   }
